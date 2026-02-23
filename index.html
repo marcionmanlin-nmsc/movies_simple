@@ -3,21 +3,109 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Movie Stream (Simple)</title>
+  <title>Movie Stream</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+  <!-- Header -->
   <header>
-    <div class="logo">🎬 Movie Stream</div>
+    <div class="header-inner">
+      <div class="logo">&#127916; Movie Stream</div>
+    </div>
   </header>
+
+  <!-- Main Content -->
   <main>
-    <section class="movie-grid" id="movieGrid">
-      <!-- Movie cards will be injected here by script.js -->
+    <section class="movie-grid">
+
+      <!-- Tron: Ares -->
+      <div class="movie-card">
+        <a href="detail.html?movie=0">
+          <img src="thumbnails/tron_ares.jpg" alt="Tron: Ares">
+        </a>
+        <div class="info">
+          <div class="title">Tron: Ares (2025)</div>
+          <div class="genre">Sci-Fi, Action</div>
+          <div class="desc">The next chapter in the Tron saga, following a new digital adventure.</div>
+          <div class="actions">
+            <a href="detail.html?movie=0" class="btn-details">Details</a>
+            <a href="https://www.youtube.com/watch?v=YShVEXb7-ic" target="_blank" class="btn-trailer">Watch Trailer</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- F1 -->
+      <div class="movie-card">
+        <a href="detail.html?movie=1">
+          <img src="thumbnails/f1.jpg" alt="F1">
+        </a>
+        <div class="info">
+          <div class="title">F1 (2025)</div>
+          <div class="genre">Sport, Drama</div>
+          <div class="desc">A Formula One driver comes out of retirement to mentor and team up with a younger driver.</div>
+          <div class="actions">
+            <a href="detail.html?movie=1" class="btn-details">Details</a>
+            <a href="https://www.youtube.com/watch?v=69ffwl-8pCU" target="_blank" class="btn-trailer">Watch Trailer</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Train Dreams -->
+      <div class="movie-card">
+        <a href="detail.html?movie=2">
+          <img src="thumbnails/train_dreams.jpg" alt="Train Dreams">
+        </a>
+        <div class="info">
+          <div class="title">Train Dreams (2025)</div>
+          <div class="genre">Drama</div>
+          <div class="desc">A logger and railroad worker leads a life of unexpected depth and beauty in early 20th-century America.</div>
+          <div class="actions">
+            <a href="detail.html?movie=2" class="btn-details">Details</a>
+            <a href="https://www.youtube.com/watch?v=_Nk8TrBHOrA" target="_blank" class="btn-trailer">Watch Trailer</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lilo & Stitch -->
+      <div class="movie-card">
+        <a href="detail.html?movie=3">
+          <img src="thumbnails/lilo_stitch.jpg" alt="Lilo & Stitch">
+        </a>
+        <div class="info">
+          <div class="title">Lilo &amp; Stitch (2026)</div>
+          <div class="genre">Family, Comedy, Sci-Fi</div>
+          <div class="desc">A young girl's close encounter with the galaxy's most wanted extraterrestrial.</div>
+          <div class="actions">
+            <a href="detail.html?movie=3" class="btn-details">Details</a>
+            <a href="https://www.youtube.com/watch?v=VWqJifMMgZE" target="_blank" class="btn-trailer">Watch Trailer</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Heart Eyes -->
+      <div class="movie-card">
+        <a href="detail.html?movie=4">
+          <img src="thumbnails/heart_eyes.jpg" alt="Heart Eyes">
+        </a>
+        <div class="info">
+          <div class="title">Heart Eyes (2025)</div>
+          <div class="genre">Horror, Romance</div>
+          <div class="desc">A serial killer known as the Heart Eyes Killer terrorizes couples on Valentine's Day.</div>
+          <div class="actions">
+            <a href="detail.html?movie=4" class="btn-details">Details</a>
+            <a href="https://www.youtube.com/watch?v=1cRzZcMlJh8" target="_blank" class="btn-trailer">Watch Trailer</a>
+          </div>
+        </div>
+      </div>
+
     </section>
   </main>
+
+  <!-- Footer -->
   <footer>
-    <p>&copy; 2026 Movie Stream. All rights reserved.</p>
+    <p>&copy; 2026 Movie Stream &mdash; Marc Ion Manlin. All rights reserved.</p>
   </footer>
-  <script src="script.js"></script>
+
 </body>
 </html>

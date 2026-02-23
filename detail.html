@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie Details</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="logo">&#127916; Movie Stream</a>
+    </div>
+  </header>
+
+  <!-- Detail Content -->
+  <main>
+    <div class="detail-container" id="detailContainer">
+      <!-- Filled by script -->
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Movie Stream &mdash; Marc Ion Manlin. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const movies = [
+      {
+        title: "Tron: Ares",
+        year: 2025,
+        genre: "Sci-Fi, Action",
+        description: "The next chapter in the Tron saga, following a new digital adventure.",
+        poster: "thumbnails/tron_ares.jpg",
+        imdbUrl: "https://www.imdb.com/title/tt6604188/",
+        trailer: "https://www.youtube.com/watch?v=YShVEXb7-ic",
+        director: "Joachim Rønning",
+        writers: "Jesse Wigutow",
+        stars: "Jared Leto, Greta Lee, Evan Peters"
+      },
+      {
+        title: "F1",
+        year: 2025,
+        genre: "Sport, Drama",
+        description: "A Formula One driver comes out of retirement to mentor and team up with a younger driver.",
+        poster: "thumbnails/f1.jpg",
+        imdbUrl: "https://www.imdb.com/title/tt16311594/",
+        trailer: "https://www.youtube.com/watch?v=69ffwl-8pCU",
+        director: "Joseph Kosinski",
+        writers: "Joseph Kosinski, Ehren Kruger",
+        stars: "Brad Pitt, Damson Idris, Javier Bardem"
+      },
+      {
+        title: "Train Dreams",
+        year: 2025,
+        genre: "Drama",
+        description: "A logger and railroad worker leads a life of unexpected depth and beauty in early 20th-century America.",
+        poster: "thumbnails/train_dreams.jpg",
+        imdbUrl: "https://www.imdb.com/title/tt29768334/",
+        trailer: "https://www.youtube.com/watch?v=_Nk8TrBHOrA",
+        director: "Clint Eastwood",
+        writers: "Denis Johnson (novel)",
+        stars: "Joel Edgerton, Felicity Jones, William H. Macy"
+      },
+      {
+        title: "Lilo & Stitch",
+        year: 2026,
+        genre: "Family, Comedy, Sci-Fi",
+        description: "A young girl's close encounter with the galaxy's most wanted extraterrestrial.",
+        poster: "thumbnails/lilo_stitch.jpg",
+        imdbUrl: "https://www.imdb.com/title/tt11032374/",
+        trailer: "https://www.youtube.com/watch?v=VWqJifMMgZE",
+        director: "Dean Fleischer Camp",
+        writers: "Chris Kekaniokalani Bright",
+        stars: "Maia Kealoha, Sydney Agudong, Zach Galifianakis"
+      },
+      {
+        title: "Heart Eyes",
+        year: 2025,
+        genre: "Horror, Romance",
+        description: "A serial killer known as the Heart Eyes Killer terrorizes couples on Valentine's Day.",
+        poster: "thumbnails/heart_eyes.jpg",
+        imdbUrl: "https://www.imdb.com/title/tt32558992/",
+        trailer: "https://www.youtube.com/watch?v=1cRzZcMlJh8",
+        director: "Josh Ruben",
+        writers: "Phillip Murphy, Christopher Landon",
+        stars: "Olivia Holt, Mason Gooding, Devon Sawa"
+      }
+    ];
+
+    const params = new URLSearchParams(window.location.search);
+    const idx = parseInt(params.get('movie'));
+    const container = document.getElementById('detailContainer');
+
+    if (isNaN(idx) || idx < 0 || idx >= movies.length) {
+      container.innerHTML = `
+        <div class="detail-card">
+          <div class="detail-body" style="text-align:center;padding:3rem;">
+            <h2 style="color:#e53935;">Movie not found</h2>
+            <p>The movie you're looking for doesn't exist.</p>
+            <a href="index.html" class="btn-back">&#8592; Back to Movies</a>
+          </div>
+        </div>
+      `;
+    } else {
+      const movie = movies[idx];
+      document.title = movie.title + " — Movie Stream";
+      container.innerHTML = `
+        <div class="detail-card">
+          <img src="${movie.poster}" alt="${movie.title}" class="detail-poster">
+          <div class="detail-body">
+            <div class="detail-title">${movie.title} (${movie.year})</div>
+            <span class="detail-genre">${movie.genre}</span>
+            <p class="detail-desc">${movie.description}</p>
+            <div class="detail-meta">
+              <p>&#127916; <strong>Director:</strong> ${movie.director}</p>
+              <p>&#9998; <strong>Writers:</strong> ${movie.writers}</p>
+              <p>&#11088; <strong>Stars:</strong> ${movie.stars}</p>
+            </div>
+            <div class="detail-actions">
+              <a href="${movie.imdbUrl}" target="_blank" class="btn-imdb">&#127902; View on IMDb</a>
+              <a href="${movie.trailer}" target="_blank" class="btn-yt">&#9654; Watch Trailer</a>
+              <a href="index.html" class="btn-back">&#8592; Back</a>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+  </script>
+
+</body>
+</html>
